@@ -1,0 +1,125 @@
+\documentclass{beamer}
+\usepackage{qrcode}
+
+\mode<presentation>
+{
+  \usetheme{CambridgeUS}      % or try Darmstadt, Madrid, Warsaw, CambridgeUS...
+  \usecolortheme{default} % or try default, whale, albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  
+} 
+
+%\usepackage[english]{babel}
+\usepackage[spanish]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{eqnarray,amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{soul}
+
+% Definition %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{studentbrown}{RGB}{124,71,50}
+
+\BeforeBeginEnvironment{definition}{%
+    \setbeamercolor{block title}{fg=white,bg=studentbrown}
+    \setbeamercolor{block body}{fg=black, bg=studentbrown!20!white}
+}
+\AfterEndEnvironment{definition}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+
+% Theorem %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\BeforeBeginEnvironment{theorem}{
+    \setbeamercolor{block title}{use=example text,fg=white,bg=example text.fg!75!black}
+    \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
+\AfterEndEnvironment{theorem}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+
+% Proposition %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{proposition}{Proposition}
+\BeforeBeginEnvironment{proposition}{
+        \setbeamercolor{block title}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+}
+\AfterEndEnvironment{proposition}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+
+% Block %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\BeforeBeginEnvironment{block}{
+    \setbeamercolor{block title}{use=example text,fg=white,bg=example text.fg!75!black}
+    \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
+\AfterEndEnvironment{block}{
+        \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+        \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title[Power Smoothing]{Power Smoothing\\  
+\small{F. Casado Machado, Dir: Jos\'e L. Mart\'inez Ramos}}
+
+%\author{\bf }
+
+%\logo{\includegraphics[height=0.3cm]{figures/logo_us.pdf}} 
+
+\institute[\bf Departamento de Ingeniería El\'ectrica]{\includegraphics[height=2cm]{figures/logo_us.pdf}\\Departmento de Ingeniería El\'ectrica}
+
+\date{I Taller Alumnos Doctorado 2019}
+
+% \AtBeginSection[]
+%   {
+%      \begin{frame}<beamer>
+%      \frametitle{Outline}
+%      \tableofcontents[currentsection]
+%      \end{frame}
+%   }
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% \begin{frame}
+% 	\setbeamercovered{transparent}
+% 	\tableofcontents
+% \end{frame}
+
+\begin{frame}<beamer>
+    \frametitle{Contenidos}
+    \tableofcontents[]
+\end{frame}
+
+\include{Intro}
+
+\AtBeginSection[]
+  {
+     \begin{frame}<beamer>
+     \frametitle{Contenidos}
+     \tableofcontents[currentsection]
+     \end{frame}
+  }
+
+\include{Lin_invest}
+\include{Models}
+\include{Preguntas}
+\begin{frame}
+  \titlepage
+  \centering \bf{mfrancisco@us.es} %\\[2em]
+  \quad
+  \qrcode[height=1.5cm]{mfrancisco@us.es}
+
+
+\end{frame}
+
+\end{document}
